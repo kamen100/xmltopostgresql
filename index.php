@@ -11,18 +11,17 @@ $row = $conn->select_author();
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" type="text/css" href="animate.css">
         <title>xml->php->PostgreSQL</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-        <script type="text/javascript" src="myscript.js"></script>
+
         <link rel="shortcut icon"
               href="favicon.ico">
     </head>        
     <body>
-        <?php include_once 'menu.php';?>
+        <?php include_once 'menu.php'; ?>
         <h1>Search form for authors and their books.</h1>
         <div id="wrap" class="col-12 text">
-            <div class="col-6 text">
-                <input type="text"  id="get_author" class="text" placeholder="Start typing an author name" max="30" class="input" maxlength="30" list="states-list" >
-                <datalist id="states-list" class="text" hidden="true">
+            <div class="col-5 text">
+                <input type="text" class="col-5 text"  id="get_author" name="get_author" class="text" placeholder="Start typing an author name" max="30" class="input" maxlength="30" list="author-list" >
+                <datalist id="author-list" class="text" hidden="true">
                     <select>
                         <?php
                         foreach ($row as $x) {
@@ -31,12 +30,25 @@ $row = $conn->select_author();
                         ?>         
                     </select>
                 </datalist>
+<!--                <select id="author-list" class="text" id="get_author" name="get_author">
+                <?php
+                foreach ($row as $x) {
+                    ?><option value="<?php print_r($x['author']); ?>"class="text"><?php print_r($x['author']); ?></option> <?php
+                }
+                ?>         
+</select>     -->
             </div>
-            <div class="aj col-6 text" >
+            <div class='hidden' id='buttonMoz'class="buttonMoz ">
+                <button class="text">
+                    Press
+                </button>
+            </div>
+            <div class="aj col-5 text" >
                 <output id="content" class="text " >
-                    
+
                 </output>
             </div>
         </div>
+        <script type="text/javascript" src="myscript.js"></script>
     </body>
 </html>

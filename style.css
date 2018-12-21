@@ -8,7 +8,10 @@ and open the template in the editor.
     Author     : User
 */
 
-
+html body nav ul li{
+    padding: 0px ;
+    margin: 0px;
+}
 
 .col-6{
     float: left;
@@ -18,6 +21,42 @@ and open the template in the editor.
     border-color: silver;
     border-radius: 5px;
     margin: 5px 10px 5px 10px;    
+}
+.col-5{
+    float: left;
+    width: 40%;
+    height: 70px;
+    border: solid;
+    border-color: silver;
+    border-radius: 5px;
+    /*margin: 2px 10px 2px 10px;*/    
+}
+.col-2{
+    float: left;
+    width: 12%;
+    height: 70px;
+    border: solid;
+    border-color: silver;
+    border-radius: 5px;
+    
+    /*margin: 2px 10px 2px 10px;*/    
+}
+.hidden{
+    float: left;
+    width: 0%;
+    visibility: hidden;
+}
+button{
+    height: 100%;
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 95%;
+    padding: 0px 0px 0px 0px;
+  }
 }
 
 .text{
@@ -30,9 +69,6 @@ and open the template in the editor.
     height: 99%;
     align-content: center;
 
-}
-#picker{
-    hidden:true;
 }
 #content text html{
    
@@ -68,3 +104,6 @@ li a:hover {
 .active {
   background-color: #4CAF50;
 }
+/*.buttonMoz{
+    visibility: hidden;
+}*/
